@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.9907762, g: 0.9558355, b: 0.868227, a: 1}
+  m_AmbientSkyColor: {r: 0.94922614, g: 0.7497573, b: 0.2528985, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -147,8 +147,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.9907762, g: 0.9558355, b: 0.868227, a: 1}
-  m_Intensity: 0.8977458
+  m_Color: {r: 0.94922614, g: 0.7497573, b: 0.2528985, a: 1}
+  m_Intensity: 0.5833334
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5849169, y: 0, z: 0, w: 0.8110932}
+  m_LocalRotation: {x: 0.9914449, y: 0, z: 0, w: 0.13052626}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -397,6 +397,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1135185476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1135185478}
+  - component: {fileID: 1135185477}
+  m_Layer: 0
+  m_Name: WhaleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1135185477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135185476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268ff51165b53e748b5b0332e8f0f66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whalePrefab: {fileID: 5116668987879663768, guid: 63650eeaf093dc747b50c7305e1e4cc8, type: 3}
+  whaleSpeed: 0.2
+  rotationSpeed: 2
+  spawnBasePosition: {x: -150, y: 10, z: -30}
+  destinationPosition: {x: 300, y: 10, z: -30}
+  podSpacing: 35
+  verticalOffset: 10
+  spawnTimeVariation: 2
+  curveMidpoint: {x: 0, y: 0, z: -10}
+--- !u!4 &1135185478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135185476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.9227967, y: 6.2819395, z: -4.2818446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134425972
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,10 +483,10 @@ MonoBehaviour:
   Preset: {fileID: 11400000, guid: 10703449fc64e7143a3eb054ef487398, type: 2}
   rotationAxis: 0
   IsDayCycleOn: 1
-  RandomStartTime: 1
-  TimeOfDay: 10.772949
-  StartTime: 12
-  CycleDuration: 50
+  RandomStartTime: 0
+  TimeOfDay: 17
+  StartTime: 17
+  CycleDuration: 300
   morningInterval: {x: 0, y: 0.5}
   afterNoonInterval: {x: 0.5, y: 1}
   lightIntensity: {x: 0, y: 1}
@@ -447,8 +500,44 @@ MonoBehaviour:
   IsMoonRotationOn: 0
   MoonIntensity: {x: 0, y: 1}
   MoonShadowStrength: 0.5
-  IsEventsOn: 0
-  events: []
+  IsEventsOn: 1
+  events:
+  - eventName: Whale's Spawn
+    Time: 18
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1135185477}
+          m_TargetAssemblyTypeName: WhaleSpawner, Assembly-CSharp
+          m_MethodName: StartWhaleEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    executed: 0
+  - eventName: Whale's despawn
+    Time: 6
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1135185477}
+          m_TargetAssemblyTypeName: WhaleSpawner, Assembly-CSharp
+          m_MethodName: StopWhaleEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    executed: 0
   eventsTolerance: 0.2
   ResetEventsTime: 0.1
 --- !u!4 &2134425974
@@ -8998,3 +9087,4 @@ SceneRoots:
   - {fileID: 9196170659379426547}
   - {fileID: 461213417}
   - {fileID: 2134425974}
+  - {fileID: 1135185478}
