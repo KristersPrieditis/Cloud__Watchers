@@ -390,11 +390,11 @@ MonoBehaviour:
   whalePrefab: {fileID: 5116668987879663768, guid: 63650eeaf093dc747b50c7305e1e4cc8, type: 3}
   whaleSpeed: 0.2
   rotationSpeed: 2
-  spawnBasePosition: {x: -150, y: 10, z: -30}
-  destinationPosition: {x: 300, y: 10, z: -30}
-  podSpacing: 35
+  spawnBasePosition: {x: -300, y: 10, z: -30}
+  destinationPosition: {x: 500, y: 10, z: -30}
+  podSpacing: 50
   verticalOffset: 10
-  spawnTimeVariation: 2
+  spawnTimeVariation: 25
   curveMidpoint: {x: 0, y: 0, z: -10}
 --- !u!4 &1135185478
 Transform:
