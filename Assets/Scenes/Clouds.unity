@@ -1186,7 +1186,8 @@ MonoBehaviour:
   - {fileID: 525620713}
   jumpHeight: 7.5
   jumpDuration: 7.5
-  maxJumps: 30
+  maxJumps: 15
+  baaSound: {fileID: 8300000, guid: 86a64af83e50de44bb2e3e832c5e3837, type: 3}
 --- !u!4 &528073439
 Transform:
   m_ObjectHideFlags: 0
@@ -2389,6 +2390,7 @@ MonoBehaviour:
   verticalOffset: 10
   spawnTimeVariation: 50
   curveMidpoint: {x: 0, y: 0, z: -10}
+  whaleSound: {fileID: 8300000, guid: 8ea65cb65380b4745867bcdbf7bf617d, type: 3}
 --- !u!4 &1135185478
 Transform:
   m_ObjectHideFlags: 0

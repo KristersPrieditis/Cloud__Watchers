@@ -9,9 +9,11 @@ public class SheepGroupJumper : MonoBehaviour
     public float jumpHeight = 2f; // Height of the jump
     public float jumpDuration = 1f; // How long each jump takes
     public int maxJumps = 10; // How many loops before despawning
+    public AudioClip baaSound; // Assign in Inspector
 
     private GameObject currentSheepGroup; // Reference to the active sheep group
     private int jumpCount = 0;
+    private AudioSource audioSource;
 
     public void SpawnSheep()
     {
@@ -23,6 +25,16 @@ public class SheepGroupJumper : MonoBehaviour
 
         // Spawn the sheep group at the first cloud position
         currentSheepGroup = Instantiate(sheepPrefab, cloudDestinations[0].position, Quaternion.identity);
+
+        // Attach an AudioSource to the sheep group if not already there
+        audioSource = currentSheepGroup.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = currentSheepGroup.AddComponent<AudioSource>();
+        }
+
+        audioSource.clip = baaSound;
+        audioSource.playOnAwake = false; // Prevent auto-playing
         StartCoroutine(JumpLoop(currentSheepGroup));
     }
 
@@ -41,6 +53,12 @@ public class SheepGroupJumper : MonoBehaviour
             // Wait before jumping (to allow rotation to complete)
             yield return new WaitForSeconds(1.5f);
 
+            // Play "Baa" sound before jumping
+            if (audioSource != null && baaSound != null)
+            {
+                audioSource.Play();
+            }
+
             // Jump to target cloud
             yield return JumpToCloud(sheepGroup, targetCloud);
 
@@ -56,7 +74,6 @@ public class SheepGroupJumper : MonoBehaviour
         // Despawn the sheep group after max jumps
         Destroy(sheepGroup);
     }
-
 
     IEnumerator JumpToCloud(GameObject sheepGroup, Transform targetCloud)
     {
@@ -95,7 +112,6 @@ public class SheepGroupJumper : MonoBehaviour
             sheepGroup.transform.rotation = targetRotation;
         }
     }
-
 
     public void StartMorning()
     {
