@@ -559,7 +559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ac9329579a338e49a7e69807f1aa750, type: 2}
+  - {fileID: -2302532451436333904, guid: 6dc2ce5fd86cf3241a0af906d9ff401a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -648,6 +648,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &3396483049253370391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 111.15384
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 236.25687
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 266.71243
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689038864, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801957647689326640, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
+      propertyPath: m_Name
+      value: Cat Lite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10990abe40e7fad4bb508b0ba943bc05, type: 3}
 --- !u!23 &3686163679874563198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -671,7 +728,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8854197956344326014, guid: 6dc2ce5fd86cf3241a0af906d9ff401a, type: 3}
+  - {fileID: 2100000, guid: 7adb08c7b66b2a2478a2eba27a19ce76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -837,3 +894,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1851401461}
   - {fileID: 1437579786601816973}
+  - {fileID: 3396483049253370391}
